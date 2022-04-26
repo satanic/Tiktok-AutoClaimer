@@ -2,6 +2,8 @@
 
 Tiktok Username Claimer/Sniper
 
+USES NEW TIKTOK WEB API
+
 1. Run Tiktok_Claimer.py
 2. Enter username to claim
 3. Enter sid of account that will check avalibility of the username. (Do not use account sid that you will claim on if checking for long periods of time. (This is to avoid rate limits.))
