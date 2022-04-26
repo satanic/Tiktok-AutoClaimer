@@ -21,8 +21,7 @@ Requierments
 Future Updates:
 1. Will add the choice of using proxys
 2. Autogenerate checking sid
-3. Select how meny threads to use
-4. Fix Error that states the autoclaim failed when it actually didnt
+3. Fix Error that states the autoclaim failed when it actually didnt
 
 Ratelimits
 
