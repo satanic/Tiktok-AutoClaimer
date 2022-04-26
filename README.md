@@ -1,8 +1,9 @@
 # Tiktok-AutoClaimer
 
+USES NEW TIKTOK WEB API
+
 Tiktok Username Claimer/Sniper
 
-USES NEW TIKTOK WEB API
 
 1. Run Tiktok_Claimer.py
 2. Enter username to claim
