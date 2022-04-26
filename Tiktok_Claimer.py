@@ -18,7 +18,7 @@ def claim():
         useragent = choice(UserAgent)
         checkurl = (f"https://www.tiktok.com/api/user/detail/?aid=1988&app_name=tiktok_web&battery_info=1&browser_online=true&channel=tiktok_web&device_id={deviceid}&device_platform=web_pc&uniqueId={user}")
         checkhed = {
-            'user-agent': 'fdsa',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36',
             'cookie': f'sessionid={checksid}',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
         checkreq = requests.get(checkurl, headers=checkhed)
