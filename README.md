@@ -1,7 +1,5 @@
 # Tiktok-AutoClaimer
 
-USES NEW TIKTOK WEB API
-
 Tiktok Username Claimer/Sniper
 
 
