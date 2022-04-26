@@ -2,13 +2,14 @@ import requests
 import sys
 from random import randint, choice
 from Data.UserAgent import UserAgent
-import threading
+from threading import active_count, Thread
 
 
 user = input("Please enter the user to claim: ")
 checksid = input("Please enter the sessionid of the account you want to check avalibility: ")
 sid = input("Please enter the sessionid of the account you want to claim to: ")
 tttoken = input("Please enter the tt_csrf_token of the account you want to claim to: ")
+threadcount = int(input("Please enter the ammount of threads to use: "))
 
 r = requests.session()
 
@@ -18,7 +19,7 @@ def claim():
         useragent = choice(UserAgent)
         checkurl = (f"https://www.tiktok.com/api/user/detail/?aid=1988&app_name=tiktok_web&battery_info=1&browser_online=true&channel=tiktok_web&device_id={deviceid}&device_platform=web_pc&uniqueId={user}")
         checkhed = {
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36',
+            'user-agent': 'fdsa',
             'cookie': f'sessionid={checksid}',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
         checkreq = requests.get(checkurl, headers=checkhed)
@@ -61,31 +62,7 @@ def claim():
             #print("[-] Request Failed")
 
 
-#claim()
+for x in range(threadcount):
+    Thread(target=(claim)).start()
 
-t1 = threading.Thread(target=claim)
-t2 = threading.Thread(target=claim)
-t3 = threading.Thread(target=claim)
-t4 = threading.Thread(target=claim)
-
-
-t1.start()
-t2.start()
-t3.start()
-t4.start()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    
