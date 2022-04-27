@@ -6,7 +6,14 @@ from random import randint, choice
 from Data.UserAgent import UserAgent
 from threading import active_count, Thread
 
+os.system("title Tiktok AutoClaimer By aac#3444 ¦ github.com/jgord559")
+r = requests.session()
+
 requestcount = 0
+
+proxies = {
+    "http": "http://p.webshare.io:9999"
+}
 
 ###getting checker cookies###
 #checkcookiereq = requests.get("https://www.tiktok.com/")
@@ -17,7 +24,8 @@ requestcount = 0
 user = input("Please enter the user to claim: ")
 checksid = input("Please enter the sessionid of the account you want to check avalibility: ")
 sid = input("Please enter the sessionid of the account you want to claim to: ")
-tttoken = input("Please enter the tt_csrf_token of the account you want to claim to: ")
+tttokenreq = requests.get("https://tiktok.com/signup", headers={'cookie': f'sessionid={sid}'})
+tttoken = (tttokenreq.cookies['tt_csrf_token'])
 threadcount = int(input("Please enter the ammount of threads to use: "))
 
 r = requests.session()
@@ -34,7 +42,7 @@ def claim():
             'user-agent': 'fdsa',
             'cookie': f'sessionid={checksid}',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
-        checkreq = requests.get(checkurl, headers=checkhed)
+        checkreq = requests.get(checkurl, headers=checkhed, proxies=proxies)
         requestcount += 1
 
         if '"statusCode":10202' in (checkreq.text):
