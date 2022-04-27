@@ -48,10 +48,6 @@ def claim():
                 print("Claimed " + user + " Successfully!")
                 input("Click enter to exit")
                 sys.exit()
-            else:
-                print("Error occured when attemting to claim.")
-                input("Click enter to exit")
-                sys.exit()
 
         if '"statusCode":0' in (checkreq.text):
             print("[-] " + "@" + user + " is taken")
