@@ -7,7 +7,6 @@ Tiktok Username Claimer/Sniper
 2. Enter username to claim
 3. Enter sid of account that will check avalibility of the username. (Do not use account sid that you will claim on if checking for long periods of time. (This is to avoid rate limits.))
 4. Enter the sid (session id) of the account you want to claim username to.
-5. Enter tt_csrf_token of the account you want to claim to.
 
 
 Instructions (To get your sid)
