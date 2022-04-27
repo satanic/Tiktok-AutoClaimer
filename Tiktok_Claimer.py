@@ -6,14 +6,11 @@ from random import randint, choice
 from Data.UserAgent import UserAgent
 from threading import active_count, Thread
 
+endmsg = False
 os.system("title Tiktok AutoClaimer By aac#3444 ¦ github.com/jgord559")
 r = requests.session()
 
 requestcount = 0
-
-proxies = {
-    "http": "http://p.webshare.io:9999"
-}
 
 ###getting checker cookies###
 #checkcookiereq = requests.get("https://www.tiktok.com/")
@@ -42,7 +39,7 @@ def claim():
             'user-agent': 'fdsa',
             'cookie': f'sessionid={checksid}',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
-        checkreq = requests.get(checkurl, headers=checkhed, proxies=proxies)
+        checkreq = requests.get(checkurl, headers=checkhed)
         requestcount += 1
 
         if '"statusCode":10202' in (checkreq.text):
@@ -66,12 +63,15 @@ def claim():
             claimreq = requests.post(claimurl, headers=claimhed, data=f"login_name={user}")
             #print(claimreq.text)
             if '"message":success' in (claimreq.text):
-                print("Claimed " + user + " Successfully!")
-                input("Click enter to exit")
-                sys.exit()
+                if endmsg == True:
+                    pass
+                else:
+                    endmsg = True
+                    print("Claimed " + user + " Successfully!")
+                    input("Click enter to exit")
+                    sys.exit()
             else:
                 pass
-                input("Click enter to exit")
                 sys.exit()
 
         if '"statusCode":0' in (checkreq.text):
