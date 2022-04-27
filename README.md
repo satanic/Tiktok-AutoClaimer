@@ -10,11 +10,11 @@ Tiktok Username Claimer/Sniper
 5. Enter tt_csrf_token of the account you want to claim to.
 
 
-Instructions (To get your sid and tt_csrf_token)
+Instructions (To get your sid)
 
 1. Add Cookie editor to chrome. (https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm)
 2. Go to tiktok.com and click on cookie editor on your extentions bar.
-3. Find sid and tt_csrf_token and copy and paste the values.
+3. Find sid and copy and paste the values.
 
 Requierments
 1. pip install threading
