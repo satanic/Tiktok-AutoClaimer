@@ -26,4 +26,4 @@ Future Updates:
 
 Ratelimits
 
-1. Due to not being able to use proxys (at this time) whilst checking, I recomend not to run the checker for more than 20 seconds at a time.
+1. Due to not being able to use proxys (at this time) whilst checking, I recomend not to run the checker for more than 20 seconds at a time. Run at 8 Threads
