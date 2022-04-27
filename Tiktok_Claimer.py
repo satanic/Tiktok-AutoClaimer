@@ -1,8 +1,16 @@
 import requests
-import sys
+import os
+import time
 from random import randint, choice
 from Data.UserAgent import UserAgent
 from threading import active_count, Thread
+
+requestcount = 0
+
+###getting checker cookies###
+#checkcookiereq = requests.get("https://www.tiktok.com/")
+#print(checkcookiereq.cookies['msToken'])
+#mstok = (checkcookiereq.cookies['msToken'])
 
 
 user = input("Please enter the user to claim: ")
@@ -13,8 +21,11 @@ threadcount = int(input("Please enter the ammount of threads to use: "))
 
 r = requests.session()
 
+
 def claim():
+    global requestcount
     while True:
+        os.system("title Tiktok AutoClaimer By aac#3444 ¦ github.com/jgord559 ¦ Requests Sent: " + str(requestcount))
         deviceid = randint(1000000000000000000, 9999999999999999999)
         useragent = choice(UserAgent)
         checkurl = (f"https://www.tiktok.com/api/user/detail/?aid=1988&app_name=tiktok_web&battery_info=1&browser_online=true&channel=tiktok_web&device_id={deviceid}&device_platform=web_pc&uniqueId={user}")
@@ -23,6 +34,7 @@ def claim():
             'cookie': f'sessionid={checksid}',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
         checkreq = requests.get(checkurl, headers=checkhed)
+        requestcount += 1
 
         if '"statusCode":10202' in (checkreq.text):
             print("[+] " + "@" + user + " is avalible!")
@@ -48,6 +60,10 @@ def claim():
                 print("Claimed " + user + " Successfully!")
                 input("Click enter to exit")
                 sys.exit()
+            else:
+                pass
+                input("Click enter to exit")
+                sys.exit()
 
         if '"statusCode":0' in (checkreq.text):
             print("[-] " + "@" + user + " is taken")
@@ -60,6 +76,4 @@ def claim():
 
 for x in range(threadcount):
     Thread(target=(claim)).start()
-    time.sleep(0.1)
-
-                    
+    time.sleep(0.2)
