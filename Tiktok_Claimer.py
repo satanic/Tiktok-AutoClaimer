@@ -60,5 +60,6 @@ def claim():
 
 for x in range(threadcount):
     Thread(target=(claim)).start()
+    time.sleep(0.1)
 
                     
