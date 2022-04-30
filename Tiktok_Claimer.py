@@ -42,7 +42,7 @@ if option == 1:
         print("Please select your proxies file")
         Tk().withdraw()
         filename = askopenfilename()
-        print(filename)
+        #print(filename)
     else:
         filename = input("Please enter where your proxies are stored. (eg etc/home/proxies.txt): ")
     load_proxies()
@@ -57,12 +57,12 @@ if option == 1:
 #mstok = (checkcookiereq.cookies['ttwid'])
 
 r = requests.session()
-
 user = input("Please enter the user to claim: ")
 checksid = input("Please enter the sessionid of the account you want to check avalibility: ")
 sid = input("Please enter the sessionid of the account you want to claim to: ")
 tttokenreq = requests.get("https://tiktok.com/signup", headers={'cookie': f'sessionid={sid}'})
 tttoken = (tttokenreq.cookies['tt_csrf_token'])
+print(tttoken)
 threadcount = int(input("Please enter the ammount of threads to use: "))
 
 ###NO PROXYS USES ON CLAIM###
@@ -135,6 +135,9 @@ def checkproxy():
 ###claim req###
 
 def claim():
+    global user
+    global tttoken
+    global sid
     claimurl = ("https://www.tiktok.com/passport/web/login_name/update/?aid=1988&app_name=tiktok_web&battery_info=1&browser_online=true&channel=tiktok_web&cookie_enabled=true&device_id=7090239850439493126&device_platform=web_pc")
     claimhed = {
         'Host': 'www.tiktok.com',
@@ -150,7 +153,7 @@ def claim():
         'Referer': f'https://www.tiktok.com/@{user}',
         'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
         'Accept-Encoding': 'gzip, deflate',
-         'Cookie': f'sessionid={sid};'}
+        'Cookie': f'sessionid={sid};'}
     claimreq = requests.post(claimurl, headers=claimhed, data=f"login_name={user}")
     #print(claimreq.text)
     if '"message":success' in (claimreq.text):
