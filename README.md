@@ -20,9 +20,8 @@ Requierments
 1. pip install threading
 
 Future Updates:
-1. Will add the choice of using proxys
-2. Autogenerate checking sid
-3. Fix Error that states the autoclaim failed when it actually didnt
+1. Autogenerate checking sid
+2. Fix Error that states the autoclaim failed when it actually didnt
 
 Ratelimits
 
