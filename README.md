@@ -2,8 +2,6 @@
 
 Tiktok Username Claimer/Sniper
 
-https://user-images.githubusercontent.com/29730484/166137971-35c21da4-1d36-4688-b172-e88961564133.mp4
-
 1. Run Tiktok_Claimer.py
 2. Enter username to claim
 3. Enter sid of account that will check avalibility of the username. (Do not use account sid that you will claim on if checking for long periods of time. (This is to avoid rate limits.))
@@ -27,3 +25,7 @@ Future Updates:
 Ratelimits
 
 1. Due to not being able to use proxys (at this time) whilst checking, I recomend not to run the checker for more than 20 seconds at a time.
+
+Example:
+
+https://user-images.githubusercontent.com/29730484/166137971-35c21da4-1d36-4688-b172-e88961564133.mp4
