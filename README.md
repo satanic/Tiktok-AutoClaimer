@@ -2,6 +2,7 @@
 
 Tiktok Username Claimer/Sniper
 
+https://user-images.githubusercontent.com/29730484/166137971-35c21da4-1d36-4688-b172-e88961564133.mp4
 
 1. Run Tiktok_Claimer.py
 2. Enter username to claim
