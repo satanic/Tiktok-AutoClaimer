@@ -62,7 +62,7 @@ checksid = input("Please enter the sessionid of the account you want to check av
 sid = input("Please enter the sessionid of the account you want to claim to: ")
 tttokenreq = requests.get("https://tiktok.com/signup", headers={'cookie': f'sessionid={sid}'})
 tttoken = (tttokenreq.cookies['tt_csrf_token'])
-print(tttoken)
+#print(tttoken)
 threadcount = int(input("Please enter the ammount of threads to use: "))
 
 ###NO PROXYS USES ON CLAIM###
